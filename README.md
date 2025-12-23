@@ -1,4 +1,4 @@
-# Hello, Gaurav Singh 👋
+# Hello, I'm Gaurav Singh 👋
 <a href="https://www.linkedin.com/in/gaurav-singh-tech/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
 I’m a **Microcomputer and Networking graduate** with a strong interest in **IT Support and Service Desk roles**. I enjoy troubleshooting technical issues, supporting users, and keeping systems running reliably. I have hands-on experience through practical labs and real-world simulations that mirror enterprise IT environments.
