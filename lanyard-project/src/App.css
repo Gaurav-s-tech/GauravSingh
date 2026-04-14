@@ -1,0 +1,11 @@
+/* Lanyard App.css — minimal, scoped styles only */
+/* All significant lanyard styles live in Lanyard.css  */
+
+/* The mount div itself should fill its parent */
+#lanyard-hero-root,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="About Gaurav Singh - IT Professional">
+    <title>About | Gaurav Singh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Trirong:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="about.css">
+
+    <!-- Theme: apply before paint to prevent flash -->
+    <script>
+        (function () {
+            var s = localStorage.getItem('theme');
+            var dark = s === 'dark' || (s === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (dark) {
+                document.documentElement.style.setProperty('--bg-color', '#0f0f0f');
+                document.documentElement.style.setProperty('--primary-color', '#FAF9F4');
+            }
+        })();
+    </script>
+
+    <!-- GSAP + ScrollTrigger + ScrollSmoother -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+
+    <script src="../script.js" defer></script>
+    <script src="about.js" defer></script>
+</head>
+
+<body class="theme-light">
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="../index.html" style="text-decoration: none; color: inherit;"><span>{G+S}</span></a>
+        </div>
+        <div class="nav-right" id="nav-links">
+            <a href="../work/work.html">WORK</a>
+            <a href="about.html" class="active-link">ABOUT</a>
+            <a href="../contact.html">CONTACT</a>
+            <a href="../Comptia/learning.html">LEARNING</a>
+
+            <span class="divider">|</span>
+            <button id="theme-btn" class="nav-btn" aria-label="Toggle Theme">■ THEME ▼</button>
+            <button id="font-btn" class="nav-btn" aria-label="Toggle Font Size">AA ▼</button>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <main class="container">
+                <section class="about-card">
+                    <div class="corner-mark top-left"></div>
+                    <div class="corner-mark top-right"></div>
+                    <div class="corner-mark bottom-left"></div>
+                    <div class="corner-mark bottom-right"></div>
+
+                    <div class="card-header">
+                        <div class="header-block">
+                            SYSADMIN // IT SUPPORT <br> EDMONTON, AB
+                        </div>
+                        <div class="header-block align-right">
+                            STATUS: ACTIVE<br>
+                            READY FOR DEPLOYMENT
+                        </div>
+                    </div>
+
+                    <div class="about-content-wrapper">
+                        <div class="about-text-section">
+                            <h1 class="about-title">WHO AM I</h1>
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="terminal-title">Techie@gaurav-sys:~</span>
+                                </div>
+                                <div class="terminal-body" id="typewriter-text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-grid">
+                            <div class="grid-box experience-box">
+                                <h2 class="box-title">PROJECTS</h2>
+                                <ul class="timeline">
+                                    <li>
+                                        <span class="date">Ongoing</span>
+                                        <a
+                                            href="https://github.com/Gaurav-s-tech/ActiveDirectoryHomeLab/blob/main/README.md">
+                                            <h3>Active Directory Home Lab Project</h3>
+                                            <p>GPOs, Service Accounts, Security Policies, File Sharing, NTFS Permissions
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span class="date">Ongoing</span>
+                                        <a href="https://github.com/Gaurav-s-tech/project-1">
+                                            <h3>Albion University Enterprise Network Design</h3>
+                                            <p>Personal Project & Infrastructure Deployment</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="grid-box education-box">
+                                <h2 class="box-title">EDUCATION</h2>
+                                <ul class="timeline">
+                                    <li>
+                                        <span class="date">2019 - 2021</span>
+                                        <h3>Microcomputer and Networking Diploma</h3>
+                                        <p>Herzing College</p>
+                                    </li>
+                                    <li>
+                                        <span class="date">2017 - 2018</span>
+                                        <h3>Information Technology Diploma</h3>
+                                        <p>Advance American Institute</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="footer-block">
+                            CURRENTLY STUDYING:<br>
+                            Comptia Network +
+                        </div>
+                        <div class="footer-block align-right">
+                            LEARNING FULL-STACK DEV<br>
+                            BASICS TO DEPLOYMENT
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+        </div><!-- #smooth-content -->
+    </div><!-- #smooth-wrapper -->
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Network icon: nodes connected by lines -->
+  <circle cx="60" cy="30" r="8" stroke="#000" stroke-width="2.5" fill="none"/>
+  <circle cx="30" cy="70" r="8" stroke="#000" stroke-width="2.5" fill="none"/>
+  <circle cx="90" cy="70" r="8" stroke="#000" stroke-width="2.5" fill="none"/>
+  <circle cx="60" cy="95" r="6" stroke="#000" stroke-width="2" fill="none"/>
+  <line x1="55" y1="37" x2="35" y2="63" stroke="#000" stroke-width="2"/>
+  <line x1="65" y1="37" x2="85" y2="63" stroke="#000" stroke-width="2"/>
+  <line x1="38" y1="70" x2="82" y2="70" stroke="#000" stroke-width="2"/>
+  <line x1="35" y1="77" x2="55" y2="90" stroke="#000" stroke-width="1.5"/>
+  <line x1="85" y1="77" x2="65" y2="90" stroke="#000" stroke-width="1.5"/>
+</svg>

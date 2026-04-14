@@ -1,0 +1,723 @@
+/* ═══════════════════════════════════════════════
+   WORK PAGE — Spreadsheet / Ledger Style
+   Uses existing theme vars: --bg-color, --primary-color,
+   --font-mono, --border-width
+   ═══════════════════════════════════════════════ */
+
+/* ── Page layout ── */
+.work-page {
+    width: 100%;
+    min-height: calc(100vh - var(--nav-height));
+    padding: 0;
+}
+
+/* ── Ledger wrapper ── */
+.ledger {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    border: var(--border-width) solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Row shared base ── */
+.l-row {
+    display: grid;
+    grid-template-columns: 56px 240px 1fr auto;
+    align-items: center;
+    height: 56px;
+    border-bottom: var(--border-width) solid var(--primary-color);
+    padding-right: 24px;
+    text-decoration: none;
+    color: var(--primary-color);
+    background: var(--bg-color);
+    transition: background 0.15s ease;
+    flex-shrink: 0;
+    cursor: pointer;
+    font-family: var(--font-mono);
+}
+
+.l-row:last-child {
+    border-bottom: none;
+}
+
+/* Section-header row */
+.l-row.l-section {
+    grid-template-columns: 56px 1fr auto;
+    cursor: default;
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.l-row.l-section:hover {
+    background: var(--primary-color);
+}
+
+/* Locked / coming-soon row */
+.l-row.l-locked {
+    cursor: default;
+    opacity: 1;
+}
+
+.l-row.l-locked:hover {
+    background: var(--bg-color);
+}
+
+/* Plain (no link) row */
+.l-row.l-plain {
+    cursor: default;
+}
+
+.l-row.l-plain:hover {
+    background: var(--bg-color);
+}
+
+/* Hover state for real project rows */
+a.l-row:hover {
+    background: rgba(128, 128, 128, 0.07);
+}
+
+/* ── Dark mode hover ── */
+body.theme-dark a.l-row:hover,
+html[style*="--bg-color: #0f0f0f"] a.l-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Icon cell ── */
+.l-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.l-icon.dim {
+    opacity: 0.35;
+}
+
+/* ── Name cell ── */
+.l-name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.l-name.dim {
+    opacity: 0.35;
+}
+
+/* ── Description cell ── */
+.l-desc {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding-right: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.l-desc.dim {
+    opacity: 0.35;
+}
+
+/* ── Meta cell (rightmost) ── */
+.l-meta {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--primary-color);
+    /* opacity: 0.5; */
+    text-align: right;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+/* Section label & count */
+.l-section-label {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.l-section-count {
+    font-size: 13px;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ── Spacer rows ── */
+.l-spacer {
+    height: 56px;
+    border-bottom: var(--border-width) solid var(--primary-color);
+    flex-shrink: 0;
+    background: var(--bg-color);
+}
+
+.l-spacer.flex {
+    flex: 1;
+    min-height: 100px;
+}
+
+/* ── Green availability dot ── */
+.avail-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #3ecf5a;
+    display: inline-block;
+    flex-shrink: 0;
+    animation: l-blink 3s ease-in-out infinite;
+}
+
+@keyframes l-blink {
+
+    0%,
+    80%,
+    100% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0.25;
+    }
+}
+
+/* ── Hover Preview Card ── */
+#work-preview {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2000;
+    /* Responsive: cap at 380px but scale down on narrow viewports */
+    width: min(380px, 85vw);
+    max-height: 480px;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    border: var(--border-width) solid var(--primary-color);
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 22px;
+    gap: 12px;
+    overflow: hidden;
+}
+
+#work-preview.show {
+    opacity: 1;
+}
+
+.prev-bar {
+    width: 36px;
+    height: var(--border-width);
+    background: var(--primary-color);
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+/* Label shown when preview is plain text (non-bullet) */
+.prev-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--primary-color);
+    opacity: 0.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Bullet list rendered inside the preview */
+.prev-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    overflow-y: auto;
+}
+
+.prev-list li {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    line-height: 1.55;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--primary-color);
+    /* opacity: 0.82; */
+    padding-left: 14px;
+    position: relative;
+    word-break: break-word;
+}
+
+.prev-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+/* ── Three-dot ellipsis icon ── */
+.l-ellipsis {
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+/* ── Folder SVG icon ── */
+.l-folder-icon svg {
+    display: block;
+}
+
+/* Section header icon inherits the inverted row color */
+.l-row.l-section .l-icon {
+    color: inherit;
+}
+
+/* ── Page header area (above ledger) ── */
+.work-page-header {
+    padding: 3rem 0 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.work-page-header h1 {
+    font-family: var(--font-main);
+    font-size: clamp(4rem, 10vw, 9rem);
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.work-page-header p {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    opacity: 0.55;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ── Banter Loader (desktop only) ── */
+.work-page-header {
+    position: relative;
+}
+
+.banter-loader {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 72px;
+    height: 72px;
+}
+
+.banter-loader__box {
+    float: left;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.banter-loader__box:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.banter-loader__box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 6px;
+}
+
+.banter-loader__box:nth-child(1):before,
+.banter-loader__box:nth-child(4):before {
+    margin-left: 26px;
+}
+
+.banter-loader__box:nth-child(3):before {
+    margin-top: 52px;
+}
+
+.banter-loader__box:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes moveBox-1 {
+    9.0909090909% { transform: translate(-26px, 0); }
+    18.1818181818% { transform: translate(0px, 0); }
+    27.2727272727% { transform: translate(0px, 0); }
+    36.3636363636% { transform: translate(26px, 0); }
+    45.4545454545% { transform: translate(26px, 26px); }
+    54.5454545455% { transform: translate(26px, 26px); }
+    63.6363636364% { transform: translate(26px, 26px); }
+    72.7272727273% { transform: translate(26px, 0px); }
+    81.8181818182% { transform: translate(0px, 0px); }
+    90.9090909091% { transform: translate(-26px, 0px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(1) { animation: moveBox-1 4s infinite; }
+
+@keyframes moveBox-2 {
+    9.0909090909% { transform: translate(0, 0); }
+    18.1818181818% { transform: translate(26px, 0); }
+    27.2727272727% { transform: translate(0px, 0); }
+    36.3636363636% { transform: translate(26px, 0); }
+    45.4545454545% { transform: translate(26px, 26px); }
+    54.5454545455% { transform: translate(26px, 26px); }
+    63.6363636364% { transform: translate(26px, 26px); }
+    72.7272727273% { transform: translate(26px, 26px); }
+    81.8181818182% { transform: translate(0px, 26px); }
+    90.9090909091% { transform: translate(0px, 26px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(2) { animation: moveBox-2 4s infinite; }
+
+@keyframes moveBox-3 {
+    9.0909090909% { transform: translate(-26px, 0); }
+    18.1818181818% { transform: translate(-26px, 0); }
+    27.2727272727% { transform: translate(0px, 0); }
+    36.3636363636% { transform: translate(-26px, 0); }
+    45.4545454545% { transform: translate(-26px, 0); }
+    54.5454545455% { transform: translate(-26px, 0); }
+    63.6363636364% { transform: translate(-26px, 0); }
+    72.7272727273% { transform: translate(-26px, 0); }
+    81.8181818182% { transform: translate(-26px, -26px); }
+    90.9090909091% { transform: translate(0px, -26px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(3) { animation: moveBox-3 4s infinite; }
+
+@keyframes moveBox-4 {
+    9.0909090909% { transform: translate(-26px, 0); }
+    18.1818181818% { transform: translate(-26px, 0); }
+    27.2727272727% { transform: translate(-26px, -26px); }
+    36.3636363636% { transform: translate(0px, -26px); }
+    45.4545454545% { transform: translate(0px, 0px); }
+    54.5454545455% { transform: translate(0px, -26px); }
+    63.6363636364% { transform: translate(0px, -26px); }
+    72.7272727273% { transform: translate(0px, -26px); }
+    81.8181818182% { transform: translate(-26px, -26px); }
+    90.9090909091% { transform: translate(-26px, 0px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(4) { animation: moveBox-4 4s infinite; }
+
+@keyframes moveBox-5 {
+    9.0909090909% { transform: translate(0, 0); }
+    18.1818181818% { transform: translate(0, 0); }
+    27.2727272727% { transform: translate(0, 0); }
+    36.3636363636% { transform: translate(26px, 0); }
+    45.4545454545% { transform: translate(26px, 0); }
+    54.5454545455% { transform: translate(26px, 0); }
+    63.6363636364% { transform: translate(26px, 0); }
+    72.7272727273% { transform: translate(26px, 0); }
+    81.8181818182% { transform: translate(26px, -26px); }
+    90.9090909091% { transform: translate(0px, -26px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(5) { animation: moveBox-5 4s infinite; }
+
+@keyframes moveBox-6 {
+    9.0909090909% { transform: translate(0, 0); }
+    18.1818181818% { transform: translate(-26px, 0); }
+    27.2727272727% { transform: translate(-26px, 0); }
+    36.3636363636% { transform: translate(0px, 0); }
+    45.4545454545% { transform: translate(0px, 0); }
+    54.5454545455% { transform: translate(0px, 0); }
+    63.6363636364% { transform: translate(0px, 0); }
+    72.7272727273% { transform: translate(0px, 26px); }
+    81.8181818182% { transform: translate(-26px, 26px); }
+    90.9090909091% { transform: translate(-26px, 0px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(6) { animation: moveBox-6 4s infinite; }
+
+@keyframes moveBox-7 {
+    9.0909090909% { transform: translate(26px, 0); }
+    18.1818181818% { transform: translate(26px, 0); }
+    27.2727272727% { transform: translate(26px, 0); }
+    36.3636363636% { transform: translate(0px, 0); }
+    45.4545454545% { transform: translate(0px, -26px); }
+    54.5454545455% { transform: translate(26px, -26px); }
+    63.6363636364% { transform: translate(0px, -26px); }
+    72.7272727273% { transform: translate(0px, -26px); }
+    81.8181818182% { transform: translate(0px, 0px); }
+    90.9090909091% { transform: translate(26px, 0px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(7) { animation: moveBox-7 4s infinite; }
+
+@keyframes moveBox-8 {
+    9.0909090909% { transform: translate(0, 0); }
+    18.1818181818% { transform: translate(-26px, 0); }
+    27.2727272727% { transform: translate(-26px, -26px); }
+    36.3636363636% { transform: translate(0px, -26px); }
+    45.4545454545% { transform: translate(0px, -26px); }
+    54.5454545455% { transform: translate(0px, -26px); }
+    63.6363636364% { transform: translate(0px, -26px); }
+    72.7272727273% { transform: translate(0px, -26px); }
+    81.8181818182% { transform: translate(26px, -26px); }
+    90.9090909091% { transform: translate(26px, 0px); }
+    100% { transform: translate(0px, 0px); }
+}
+.banter-loader__box:nth-child(8) { animation: moveBox-8 4s infinite; }
+
+@keyframes moveBox-9 {
+    9.0909090909% { transform: translate(-26px, 0); }
+    18.1818181818% { transform: translate(-26px, 0); }
+    27.2727272727% { transform: translate(0px, 0); }
+    36.3636363636% { transform: translate(-26px, 0); }
+    45.4545454545% { transform: translate(0px, 0); }
+    54.5454545455% { transform: translate(0px, 0); }
+    63.6363636364% { transform: translate(-26px, 0); }
+    72.7272727273% { transform: translate(-26px, 0); }
+    81.8181818182% { transform: translate(-52px, 0); }
+    90.9090909091% { transform: translate(-26px, 0); }
+    100% { transform: translate(0px, 0); }
+}
+.banter-loader__box:nth-child(9) { animation: moveBox-9 4s infinite; }
+
+
+
+/* ── Accordion (experience rows) ── */
+.l-accordion {
+    display: contents; /* lets children sit directly in the ledger flex column */
+}
+
+button.l-exp-row {
+    width: 100%;
+    text-align: left;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: var(--font-mono);
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.l-chevron {
+    display: inline-block;
+    margin-left: 8px;
+    font-style: normal;
+    font-size: 1.1rem;
+    transition: transform 0.25s ease;
+    line-height: 1;
+}
+
+button.l-exp-row[aria-expanded="true"] .l-chevron {
+    transform: rotate(90deg);
+}
+
+.l-expand-panel {
+    border-bottom: var(--border-width) solid var(--primary-color);
+    background: var(--bg-color);
+    overflow: hidden;
+    animation: panelOpen 0.25s ease forwards;
+}
+
+@keyframes panelOpen {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.l-expand-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem 1.5rem 1.25rem 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.l-expand-panel li {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.55;
+    padding-left: 1rem;
+    position: relative;
+    opacity: 0.85;
+}
+
+.l-expand-panel li::before {
+    content: '↳';
+    position: absolute;
+    left: 0;
+    opacity: 0.4;
+}
+
+/* ══════════════════════════════════════════
+   WORK PAGE RESPONSIVE BREAKPOINTS
+══════════════════════════════════════════ */
+
+/* ── Responsive: hide hover preview on touch devices ── */
+@media (hover: none) {
+    #work-preview {
+        display: none !important;
+    }
+}
+
+/* ── Tablet (768px – 1023px) ── */
+@media (max-width: 1023px) and (min-width: 768px) {
+    /* Responsive: reduce name column on tablets, keep description */
+    .l-row {
+        grid-template-columns: 48px 180px 1fr auto;
+        height: 52px;
+    }
+
+    .l-row.l-section {
+        grid-template-columns: 48px 1fr auto;
+    }
+
+    .work-page-header {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    /* Responsive: slightly smaller fonts for description on tablet */
+    .l-desc {
+        font-size: 12px;
+    }
+
+    .l-name {
+        font-size: 12px;
+    }
+
+    .l-expand-panel ul {
+        padding: 1rem 1.25rem 1rem 48px;
+    }
+}
+
+/* ── Mobile (< 768px) ── */
+@media (max-width: 767px) {
+    .l-row {
+        grid-template-columns: 44px 1fr auto;
+        /* Responsive: taller rows for better touch targets */
+        height: 52px;
+        min-height: 52px;
+    }
+
+    /* Responsive: hide description column on mobile, save space */
+    .l-desc {
+        display: none;
+    }
+
+    .l-row.l-section {
+        grid-template-columns: 44px 1fr auto;
+    }
+
+    .work-page-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .work-page-header h1 {
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+    /* Hide banter loader on mobile — preserves responsive layout */
+    .banter-loader {
+        display: none;
+    }
+
+    .ledger {
+        border-left: none;
+        border-right: none;
+    }
+
+    /* Responsive: smaller padding inside expand panels on mobile */
+    .l-expand-panel ul {
+        padding: 1rem 1rem 1rem 44px;
+        gap: 0.5rem;
+    }
+
+    .l-expand-panel li {
+        font-size: 0.75rem;
+    }
+
+    /* Responsive: smaller meta text on mobile */
+    .l-meta {
+        font-size: 11px;
+    }
+
+    .l-name {
+        font-size: 12px;
+    }
+
+    /* Responsive: hide preview on mobile entirely */
+    #work-preview {
+        display: none;
+    }
+
+    /* Responsive: tighter spacer rows on mobile */
+    .l-spacer {
+        height: 40px;
+    }
+
+    .l-spacer.flex {
+        min-height: 60px;
+    }
+}
+
+/* ── Small phones (< 480px) ── */
+@media (max-width: 480px) {
+    .l-row {
+        grid-template-columns: 36px 1fr auto;
+        padding-right: 12px;
+    }
+
+    .l-row.l-section {
+        grid-template-columns: 36px 1fr auto;
+    }
+
+    .work-page-header {
+        padding: 1.5rem 0.5rem 1rem;
+    }
+
+    .work-page-header h1 {
+        font-size: clamp(2.5rem, 14vw, 4rem);
+    }
+
+    .work-page-header p {
+        font-size: 0.8rem;
+    }
+
+    .l-name {
+        font-size: 11px;
+    }
+
+    .l-meta {
+        font-size: 10px;
+    }
+
+    .l-expand-panel ul {
+        padding: 0.75rem 0.75rem 0.75rem 36px;
+    }
+
+    .l-expand-panel li {
+        font-size: 0.7rem;
+    }
+}

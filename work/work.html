@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="description"
+      content="Work Experience of Gaurav Singh - IT Professional &amp; Systems Administrator"
+    />
+    <title>Gaurav Singh - Work</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="work.css" />
+
+    <!-- Theme: apply before paint to prevent flash -->
+    <script>
+      (function () {
+        var s = localStorage.getItem("theme");
+        var dark =
+          s === "dark" ||
+          (s === null &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) {
+          document.documentElement.style.setProperty("--bg-color", "#0f0f0f");
+          document.documentElement.style.setProperty(
+            "--primary-color",
+            "#FAF9F4",
+          );
+        }
+      })();
+    </script>
+
+    <!-- GSAP + ScrollTrigger + ScrollSmoother -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+
+    <script src="../script.js" defer></script>
+  </head>
+
+  <body class="theme-light">
+
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="../Index.html" style="text-decoration: none; color: inherit"><span>{G+S}</span></a>
+      </div>
+      <div class="nav-right" id="nav-links">
+        <a href="work.html" style="border-bottom: 2px solid var(--primary-color)">WORK</a>
+        <a href="../about/about.html">ABOUT</a>
+        <a href="../contact.html">CONTACT</a>
+        <a href="../Comptia/learning.html">LEARNING</a>
+        <span class="divider">|</span>
+        <button id="theme-btn" class="nav-btn" aria-label="Toggle Theme">■ THEME ▼</button>
+        <button id="font-btn" class="nav-btn" aria-label="Toggle Font Size">AA ▼</button>
+      </div>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+
+        <!-- MAIN CONTENT -->
+        <main class="container" style="padding-top: 4rem; padding-bottom: 4rem">
+          <!-- Page header -->
+          <div class="work-page-header fade-in">
+            <h1>Work</h1>
+            <p>// PROFESSIONAL_TIMELINE &amp; EXPERIENCE_LOG</p>
+            <!-- Banter Loader — desktop only -->
+            <div class="banter-loader" aria-hidden="true">
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+              <div class="banter-loader__box"></div>
+            </div>
+          </div>
+
+          <!-- Hover preview card -->
+          <div id="work-preview" aria-hidden="true">
+            <div class="prev-bar"></div>
+            <div class="prev-label" id="work-prev-label"></div>
+            <ul class="prev-list" id="work-prev-list"></ul>
+            <div class="prev-bar"></div>
+          </div>
+
+          <!-- ─── LEDGER TABLE ─── -->
+          <div class="ledger fade-in">
+            <!-- Top flex spacer -->
+            <div class="l-spacer flex"></div>
+
+            <!-- ─ SECTION HEADER: Experience ─ -->
+            <div class="l-row l-section">
+              <div class="l-icon l-folder-icon">
+                <svg
+                  width="14"
+                  height="13"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1 3.5h4.5l1.2-1.8H13V12H1V3.5z"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <path d="M1 5.5h12" stroke="currentColor" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="l-section-label">Experience</div>
+              <!-- <div class="l-section-count">[04]</div> -->
+            </div>
+
+            <!-- Experience rows (accordion) -->
+            <div class="l-accordion">
+              <button class="l-row l-exp-row" aria-expanded="false" data-preview="• Manage 50+ daily service requests using Zendesk and Genesys Cloud while maintaining SLA.
+• Delivered step-by-step technical guidance via email and phone to resolve issues and reduce 20% repeat service requests.
+• Maintain accurate documentation for audit readiness, escalation clarity, and continuous service improvement.
+• Diagnose and resolve advanced issues related to device/platform compatibility, performing IP refreshes, and troubleshooting streaming issues on various platforms and WebOS.
+• Verified user identity and followed access-control procedures to provide secure account support in a compliance-focused environment.">
+                <div class="l-icon">↳</div>
+                <div class="l-name">Sutherland Global</div>
+                <div class="l-desc">Account / Technical Support &nbsp;·&nbsp; Jun 2024 – Present</div>
+                <div class="l-meta">Edmonton, AB <span class="l-chevron">›</span></div>
+              </button>
+              <div class="l-expand-panel" hidden>
+                <ul>
+                  <li>Manage 50+ daily service requests using Zendesk and Genesys Cloud while maintaining SLA.</li>
+                  <li>Delivered step-by-step technical guidance via email and phone to resolve issues and reduce 20% repeat service requests.</li>
+                  <li>Maintain accurate documentation for audit readiness, escalation clarity, and continuous service improvement.</li>
+                  <li>Diagnose and resolve advanced issues related to device/platform compatibility, performing IP refreshes, and troubleshooting streaming issues on various platforms and WebOS.</li>
+                  <li>Verified user identity and followed access-control procedures to provide secure account support in a compliance-focused environment.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="l-accordion">
+              <button class="l-row l-exp-row" aria-expanded="false" data-preview="• Install, maintain and repair Point of Sale systems.
+• Assisted staff with order flow management and POS interface usage, providing user training.
+• Troubleshoot POS software issues including system freezes, application crashes, and error codes.
+• Assisted with menu updates and POS settings under supervision to ensure correct pricing.">
+                <div class="l-icon">↳</div>
+                <div class="l-name">Swiss Chalet</div>
+                <div class="l-desc">Technical Support &amp; Customer Service &nbsp;·&nbsp; Mar 2022 – Feb 2024</div>
+                <div class="l-meta">Charlottetown, PE <span class="l-chevron">›</span></div>
+              </button>
+              <div class="l-expand-panel" hidden>
+                <ul>
+                  <li>Install, maintain and repair Point of Sale systems.</li>
+                  <li>Assisted staff with order flow management and POS interface usage, providing user training.</li>
+                  <li>Troubleshoot POS software issues including system freezes, application crashes, and error codes by performing software updates, running diagnostics, and coordinating with vendor technical support.</li>
+                  <li>Assisted with menu updates and POS settings under supervision to ensure correct pricing.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="l-accordion">
+              <button class="l-row l-exp-row" aria-expanded="false" data-preview="• Executed user lifecycle management (on/off boarding) in a Windows Cloud Environment for students.
+• Administered Active Directory and Microsoft Azure for users, computers, and Group Policy Management (GPOs).
+• Assisted with connectivity and hardware troubleshooting and repair for computers and printers.
+• Worked with a ticketing system to respond to support requests via email and on-call assistance.">
+                <div class="l-icon">↳</div>
+                <div class="l-name">Herzing College</div>
+                <div class="l-desc">IT Intern &nbsp;·&nbsp; Aug 2021 – Jan 2022</div>
+                <div class="l-meta">Montreal, QC <span class="l-chevron">›</span></div>
+              </button>
+              <div class="l-expand-panel" hidden>
+                <ul>
+                  <li>Executed user lifecycle management (on/off boarding) in a Windows Cloud Environment for students.</li>
+                  <li>Administered Active Directory and Microsoft Azure for users, computers, and Group Policy Management (GPOs).</li>
+                  <li>Assisted with connectivity and hardware troubleshooting and repair for computers and printers.</li>
+                  <li>Worked with a ticketing system to respond to support requests via email and on-call assistance, including on-site troubleshooting.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- <a class="l-row" href="#" data-preview="Cook It">
+              <div class="l-icon">↳</div>
+              <div class="l-name">Cook It</div>
+              <div class="l-desc">
+                Production Support Associate &nbsp;·&nbsp; Oct 2020 – Mar 2021
+              </div>
+              <div class="l-meta">Montreal, QC</div>
+            </a>
+
+            <a class="l-row" href="#" data-preview="Walmart">
+              <div class="l-icon">↳</div>
+              <div class="l-name">Walmart</div>
+              <div class="l-desc">
+                Overnight Fulfillment Associate &nbsp;·&nbsp; Oct 2019 – Sep
+                2020
+              </div>
+              <div class="l-meta">Laval, QC</div>
+            </a> -->
+
+            <div class="l-accordion">
+              <button class="l-row l-exp-row" aria-expanded="false" data-preview="• Troubleshoot and resolve common technical issues related to hardware, software, networks, and cloud services.
+• Perform standard user account administration tasks, such as password resets and basic access requests.
+• Escalate complex issues to senior IT staff or vendors when required.
+• Assist with system updates, backups, and basic security tasks.
+• Provide support for common enterprise applications (e.g., Microsoft 365, Windows, VPN, remote access tools).">
+                <div class="l-icon">↳</div>
+                <div class="l-name">TVS Motors</div>
+                <div class="l-desc">Help Desk Support Technician &nbsp;·&nbsp; Jul 2018 – Aug 2019</div>
+                <div class="l-meta">Punjab, India <span class="l-chevron">›</span></div>
+              </button>
+              <div class="l-expand-panel" hidden>
+                <ul>
+                  <li>Troubleshoot and resolve common technical issues related to hardware, software, networks, and cloud services.</li>
+                  <li>Perform standard user account administration tasks, such as password resets and basic access requests, in accordance with security and access control policies.</li>
+                  <li>Escalate complex issues to senior IT staff or vendors when required.</li>
+                  <li>Assist with system updates, backups, and basic security tasks.</li>
+                  <li>Provide support for common enterprise applications (e.g., Microsoft 365, Windows, VPN, remote access tools).</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ─ PERSONAL PROJECTS (hidden for now — will update later) ─
+            <div class="l-row l-section" style="margin-top: 0">
+              <div class="l-icon l-folder-icon">
+                <svg
+                  width="14"
+                  height="13"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1 3.5h4.5l1.2-1.8H13V12H1V3.5z"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <path d="M1 5.5h12" stroke="currentColor" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="l-section-label">Personal Projects</div>
+            </div>
+
+            <a class="l-row" href="#" data-preview="
+            Tools: Antigravity, Claude, Gemini
+            Languages: HTML, CSS, JS, React, Node.js, MongoDB">
+              <div class="l-icon">↳</div>
+              <div class="l-name">Portfolio Site</div>
+              <div class="l-desc">Web Design, 3D Lanyard, GSAP Animations</div>
+              <div class="l-meta"></div>
+            </a>
+
+            <a class="l-row" href="#" data-preview="SyncTube">
+              <div class="l-icon">↳</div>
+              <div class="l-name">SyncTube</div>
+              <div class="l-desc">
+                Synchronized YouTube Watch Party — React + Socket.io
+              </div>
+              <div class="l-meta"></div>
+            </a>
+
+            <a class="l-row" href="#" data-preview="ALU Calculator">
+              <div class="l-icon">↳</div>
+              <div class="l-name">ALU Calculator</div>
+              <div class="l-desc">CPU ALU Visualizer — Web App</div>
+              <div class="l-meta"></div>
+            </a>
+
+            <div class="l-row l-locked">
+              <div class="l-icon dim">
+                <svg width="10" height="13" viewBox="0 0 10 13" fill="none" aria-hidden="true">
+                  <rect x="0.5" y="5.5" width="9" height="7" rx="1" stroke="currentColor" />
+                  <path d="M2.5 5.5V3.5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" />
+                  <circle cx="5" cy="9" r="1" fill="currentColor" />
+                </svg>
+              </div>
+              <div class="l-name dim">Azure Home Lab</div>
+              <div class="l-desc dim">Coming Soon</div>
+              <div class="l-meta"></div>
+            </div>
+
+            <div class="l-row l-locked">
+              <div class="l-icon dim">
+                <svg width="10" height="13" viewBox="0 0 10 13" fill="none" aria-hidden="true">
+                  <rect x="0.5" y="5.5" width="9" height="7" rx="1" stroke="currentColor" />
+                  <path d="M2.5 5.5V3.5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" />
+                  <circle cx="5" cy="9" r="1" fill="currentColor" />
+                </svg>
+              </div>
+              <div class="l-name dim">Intune Automation</div>
+              <div class="l-desc dim">Coming Soon</div>
+              <div class="l-meta"></div>
+            </div>
+            ─ END PERSONAL PROJECTS -->
+
+            <!-- Small divider spacer -->
+            <div class="l-spacer"></div>
+
+            <!-- More link -->
+            <div class="l-row l-plain">
+              <div class="l-icon l-ellipsis">···</div>
+              <div class="l-name">More</div>
+              <div class="l-desc"></div>
+              <div class="l-meta"></div>
+            </div>
+
+            <!-- Status row -->
+            <div class="l-row l-plain">
+              <div class="l-icon">↙</div>
+              <div class="l-name">Status</div>
+              <div class="l-desc">
+                IT Professional &amp; Systems Administrator
+              </div>
+              <div class="l-meta">
+                <span class="avail-dot"></span>
+                Available Now
+              </div>
+            </div>
+
+            <!-- Bottom flex spacer -->
+            <div class="l-spacer flex"></div>
+          </div>
+          <!-- .ledger -->
+        </main>
+      </div>
+      <!-- #smooth-content -->
+    </div>
+    <!-- #smooth-wrapper -->
+
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+      // ── Accordion: experience rows ──
+      document.querySelectorAll('.l-exp-row').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const panel = btn.nextElementSibling;
+          const open  = btn.getAttribute('aria-expanded') === 'true';
+          // Close all others
+          document.querySelectorAll('.l-exp-row').forEach(b => {
+            b.setAttribute('aria-expanded', 'false');
+            b.nextElementSibling.hidden = true;
+          });
+          // Toggle clicked
+          if (!open) {
+            btn.setAttribute('aria-expanded', 'true');
+            panel.hidden = false;
+          }
+          // Dismiss the hover preview on click
+          document.getElementById('work-preview').classList.remove('show');
+        });
+      });
+
+      // ── Hover preview (experience buttons + project links) ──
+      const preview   = document.getElementById("work-preview");
+      const prevLabel = document.getElementById("work-prev-label");
+      const prevList  = document.getElementById("work-prev-list");
+
+      function renderPreview(raw) {
+        if (raw.includes('•')) {
+          prevLabel.textContent = '';
+          prevList.style.display = 'flex';
+          prevList.innerHTML = '';
+          raw.split('•').map(s => s.trim()).filter(s => s.length > 0).forEach(point => {
+            const li = document.createElement('li');
+            li.textContent = point;
+            prevList.appendChild(li);
+          });
+        } else {
+          prevList.style.display = 'none';
+          prevList.innerHTML = '';
+          prevLabel.textContent = raw.trim();
+        }
+      }
+
+      // Experience buttons: show on hover, hide on mouseleave, also hide on click
+      document.querySelectorAll("button.l-exp-row[data-preview]").forEach((btn) => {
+        btn.addEventListener("mouseenter", () => {
+          renderPreview(btn.dataset.preview);
+          preview.classList.add("show");
+        });
+        btn.addEventListener("mouseleave", () => {
+          preview.classList.remove("show");
+        });
+      });
+
+      // Project links: show on hover, hide on mouseleave (normal behaviour)
+      document.querySelectorAll("a.l-row[data-preview]").forEach((row) => {
+        row.addEventListener("mouseenter", () => {
+          renderPreview(row.dataset.preview);
+          preview.classList.add("show");
+        });
+        row.addEventListener("mouseleave", () => {
+          preview.classList.remove("show");
+        });
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        const cardW = 380;
+        const left  = Math.min(e.clientX + 28, window.innerWidth - cardW - 16);
+        preview.style.left = left + "px";
+        preview.style.top  = e.clientY - 75 + "px";
+      });
+    </script>
+  </body>
+</html>
