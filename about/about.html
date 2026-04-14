@@ -7,27 +7,19 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="About Gaurav Singh - IT Professional">
     <title>About | Gaurav Singh</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Trirong:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Trirong:wght@400;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="about.css">
 
     <!-- Theme: apply before paint to prevent flash -->
-    <script>
-        (function () {
-            var s = localStorage.getItem('theme');
-            var dark = s === 'dark' || (s === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            if (dark) {
-                document.documentElement.style.setProperty('--bg-color', '#0f0f0f');
-                document.documentElement.style.setProperty('--primary-color', '#FAF9F4');
-            }
-        })();
-    </script>
+    <script src="../theme-init.js"></script>
 
     <!-- GSAP + ScrollTrigger + ScrollSmoother -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>

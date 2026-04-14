@@ -60,7 +60,6 @@
     margin-left: auto;
     font-size: 0.8rem;
     font-family: var(--font-mono);
-    /* opacity: 0.7; */
     color: rgb(4, 212, 21);
 }
 
@@ -167,10 +166,6 @@
     /* Matches your existing text color */
 }
 
-/* Nav Active Link Override */
-.active-link {
-    border-bottom: 2px solid var(--primary-color);
-}
 
 /* ══════════════════════════════════════════
    ABOUT PAGE RESPONSIVE BREAKPOINTS

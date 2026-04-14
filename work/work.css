@@ -138,7 +138,6 @@ html[style*="--bg-color: #0f0f0f"] a.l-row:hover {
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--primary-color);
-    /* opacity: 0.5; */
     text-align: right;
     white-space: nowrap;
     display: flex;
@@ -262,7 +261,6 @@ html[style*="--bg-color: #0f0f0f"] a.l-row:hover {
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--primary-color);
-    /* opacity: 0.82; */
     padding-left: 14px;
     position: relative;
     word-break: break-word;

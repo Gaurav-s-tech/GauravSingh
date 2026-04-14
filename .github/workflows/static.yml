@@ -33,6 +33,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Clean up files before upload
+        run: |
+          rm -rf lanyard-project/node_modules
+          rm -rf lanyard-project/src
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

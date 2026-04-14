@@ -7,27 +7,19 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="CompTIA Certification Learning Resources — Gaurav Singh">
     <title>CompTIA Resources — Gaurav Singh</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Trirong:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Trirong:wght@400;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="subpage.css">
 
     <!-- Theme: apply before paint to prevent flash -->
-    <script>
-        (function () {
-            var s = localStorage.getItem('theme');
-            var dark = s === 'dark' || (s === null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            if (dark) {
-                document.documentElement.style.setProperty('--bg-color', '#0f0f0f');
-                document.documentElement.style.setProperty('--primary-color', '#FAF9F4');
-            }
-        })();
-    </script>
+    <script src="../theme-init.js"></script>
 
     <!-- GSAP + ScrollTrigger + ScrollSmoother -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
@@ -38,6 +30,19 @@
 </head>
 
 <body class="theme-light">
+    <!-- Shared SVG Definitions for PDF Icons -->
+    <svg style="display: none;">
+        <symbol id="icon-pdf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+        </symbol>
+        <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+        </symbol>
+    </svg>
+
 
     <nav class="navbar">
         <div class="nav-left">
@@ -156,11 +161,7 @@
                         <div class="pdf-list">
                             <a href="full-learning-n+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Full Learning Guide</span>
@@ -168,22 +169,13 @@
                                 </div>
                                 <span class="pdf-row-size">969 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="exam-refresh-n+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Exam Refresh</span>
@@ -191,22 +183,13 @@
                                 </div>
                                 <span class="pdf-row-size">309 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="q-a-n+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Questions & Answers</span>
@@ -214,12 +197,7 @@
                                 </div>
                                 <span class="pdf-row-size">518 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
                         </div>
@@ -238,11 +216,7 @@
                         <div class="pdf-list">
                             <a href="full-learning-l+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Full Learning Guide</span>
@@ -250,22 +224,13 @@
                                 </div>
                                 <span class="pdf-row-size">976 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="exam-refresh-l+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Exam Refresh</span>
@@ -273,22 +238,13 @@
                                 </div>
                                 <span class="pdf-row-size">484 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="q-a-l+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Questions & Answers</span>
@@ -296,12 +252,7 @@
                                 </div>
                                 <span class="pdf-row-size">546 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
                         </div>
@@ -320,11 +271,7 @@
                         <div class="pdf-list">
                             <a href="full-learning-a+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Full Learning Guide</span>
@@ -332,22 +279,13 @@
                                 </div>
                                 <span class="pdf-row-size">747 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="q-a-a+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Questions & Answers</span>
@@ -355,12 +293,7 @@
                                 </div>
                                 <span class="pdf-row-size">480 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
                         </div>
@@ -379,11 +312,7 @@
                         <div class="pdf-list">
                             <a href="full-learning-s+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Full Learning Guide</span>
@@ -391,22 +320,13 @@
                                 </div>
                                 <span class="pdf-row-size">878 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="exam-refresh-s+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Exam Refresh</span>
@@ -414,22 +334,13 @@
                                 </div>
                                 <span class="pdf-row-size">351 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
 
                             <a href="q-a-s+.pdf" download class="pdf-row">
                                 <div class="pdf-row-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                        <polyline points="14 2 14 8 20 8" />
-                                    </svg>
+                                    <svg><use href="#icon-pdf"/></svg>
                                 </div>
                                 <div class="pdf-row-info">
                                     <span class="pdf-row-title">Questions & Answers</span>
@@ -437,12 +348,7 @@
                                 </div>
                                 <span class="pdf-row-size">833 KB</span>
                                 <div class="pdf-row-action">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
+                                    <svg width="18" height="18"><use href="#icon-download"/></svg>
                                 </div>
                             </a>
                         </div>
@@ -463,38 +369,7 @@
 
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
-    <script>
-        function toggleCert(certId) {
-            document.querySelectorAll('.cert-select-card').forEach(function (card) {
-                card.classList.remove('active');
-            });
-
-            document.querySelectorAll('.cert-panel').forEach(function (panel) {
-                panel.classList.remove('open');
-            });
-
-            document.getElementById('cert-' + certId).classList.add('active');
-
-            var panel = document.getElementById('panel-' + certId);
-            panel.classList.add('open');
-
-            setTimeout(function () {
-                if (typeof ScrollTrigger !== 'undefined') {
-                    ScrollTrigger.refresh();
-                }
-
-                var smoother = ScrollSmoother.get();
-                if (smoother) {
-                    smoother.scrollTo(panel, true, 'top top+=80');
-                } else if (typeof gsap !== 'undefined') {
-                    var panelTop = panel.getBoundingClientRect().top + window.scrollY - 80;
-                    gsap.to(window, { duration: 0.8, scrollTo: panelTop, ease: 'power2.out' });
-                } else {
-                    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 150);
-        }
-    </script>
+    <script src="cert-toggle.js"></script>
 
 </body>
 

@@ -123,6 +123,8 @@ function initLanyardSync() {
 
     // When the iframe signals it's ready, send the current bg
     window.addEventListener('message', (event) => {
+        // Only accept messages from same origin for security
+        if (event.origin !== window.location.origin) return;
         if (event.data && event.data.type === 'lanyardReady') {
             sendBgToLanyard(getCurrentBgColor());
         }
@@ -145,7 +147,7 @@ function sendBgToLanyard(color) {
     const iframe = document.getElementById('lanyard-iframe');
     if (!iframe || !iframe.contentWindow) return;
     try {
-        iframe.contentWindow.postMessage({ type: 'setBg', color }, '*');
+        iframe.contentWindow.postMessage({ type: 'setBg', color }, window.location.origin);
     } catch (e) {
         // Cross-origin restriction — ignore
     }

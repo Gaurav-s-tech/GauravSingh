@@ -310,14 +310,7 @@ a[href^="mailto"]:hover {
     overflow: hidden;
 }
 
-/* ─── Footer Elements ─── */
-.footer-center {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.7rem;
-}
+
 
 .sticker-float-bottom {
     display: flex;
@@ -507,13 +500,7 @@ a[href^="mailto"]:hover {
     width: 100%;
 }
 
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    align-items: start;
-    width: 100%;
-}
+
 
 /* ─── 3D Gallery Frames ─── */
 .cert-card {
@@ -767,9 +754,7 @@ a[href^="mailto"]:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .cert-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+
 }
 
 /* ── Tablet (768px – 1023px) ── */

@@ -1,0 +1,14 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Dependencies (lanyard sub-project)
+lanyard-project/node_modules/
+
+# IDE
+.vscode/
+.idea/
