@@ -43,6 +43,7 @@ jobs:
         run: |
           rm -rf lanyard-project/node_modules
           rm -rf lanyard-project/src
+          rm -f lanyard-project/.gitignore
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
