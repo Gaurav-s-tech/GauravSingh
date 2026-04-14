@@ -5,31 +5,31 @@ const { useState, useEffect } = React;
 // --- DATA ---
 const CERTIFICATES = [
     {
-        id: 1, title: "Endpoint Administrator", code: "MD-102", issuer: "Microsoft", img: "certifications/MD-102.png",
+        id: 1, title: "Endpoint Administrator", code: "MD-102", issuer: "Microsoft", img: "certifications/md-102.png",
         url: "https://learn.microsoft.com/api/credentials/share/en-us/GauravSingh-7912/"
     },
     {
         id: 2,
         title: "Azure Fundamentals",
-        img: "certifications/AZ-900.png",
+        img: "certifications/az-900.png",
         code: "AZ-900",
         issuer: "Microsoft",
         url: "https://learn.microsoft.com/api/credentials/share/en-us/GauravSingh-7912/10AA771F7F24C256?sharingId=258B974C6AF453FD"
     },
     {
-        id: 3, title: "M365 Fundamentals", code: "MS-900", issuer: "Microsoft", img: "certifications/MS-900.png",
+        id: 3, title: "M365 Fundamentals", code: "MS-900", issuer: "Microsoft", img: "certifications/ms-900.png",
         url: "https://learn.microsoft.com/api/credentials/share/en-us/GauravSingh-7912/FD1F99EC31E6EE20?sharingId=258B974C6AF453FD"
     },
     {
-        id: 4, title: "Google IT Support", code: "Professional", issuer: "Google", img: "certifications/Google-IT.png",
+        id: 4, title: "Google IT Support", code: "Professional", issuer: "Google", img: "certifications/google-it.png",
         url: "https://coursera.org/share/ef71a62eaf2e305cea1a9c61dba45644"
     },
     {
-        id: 5, title: "IBM AI Engineering", code: "Professional", issuer: "IBM", img: "certifications/IBM-AI.png",
+        id: 5, title: "IBM AI Engineering", code: "Professional", issuer: "IBM", img: "certifications/ibm-ai.png",
         url: "https://coursera.org/share/15de6e4130424c6639d47f863b50bf18"
     },
     {
-        id: 6, title: "Linux", code: "Professional", issuer: "Linux", img: "certifications/Linux.png",
+        id: 6, title: "Linux", code: "Professional", issuer: "Linux", img: "certifications/linux.png",
         url: "https://www.linkedin.com/learning/certificates/2d6f45c475833e2c0a432a60d9532a7ccf779b7d2e0f6f43c5c6558d463ef0b7?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BjDLVAsIoSWiemPfpA7HdHQ%3D%3D"
     },
 ];
@@ -48,35 +48,35 @@ const APPLIED_SKILLS = [
         title: "Microsoft Applied Skill 1",
         issuer: "Microsoft",
         url: "https://learn.microsoft.com/api/credentials/share/en-us/GauravSingh-7912/27803118315447CB?sharingId=258B974C6AF453FD",
-        img: "certifications/AS-IAME.png",
+        img: "certifications/as-iame.png",
     },
     {
         id: 2,
         title: "Microsoft Applied Skill 2",
         issuer: "Microsoft",
         url: "https://learn.microsoft.com/api/credentials/share/en-us/GauravSingh-7912/27803118315447CB?sharingId=258B974C6AF453FD",
-        img: "certifications/AS-DCAM.png",
+        img: "certifications/as-dcam.png",
     },
     {
         id: 3,
         title: "Microsoft Applied Skill 3",
         issuer: "Microsoft",
         url: "https://learn.microsoft.com/en-ca/users/gauravsingh-6655/credentials/7a348bc5a60f452e?ref=https%3A%2F%2Fwww.linkedin.com%2F",
-        img: "certifications/AS-ADDS.png",
+        img: "certifications/as-adds.png",
     },
     {
         id: 4,
         title: "IBM",
         issuer: "IBM",
         url: "https://courses.cognitiveclass.ai/certificates/25c3fb6e59bf4517a0d38d7e47f55651",
-        img: "certifications/IBM-CE.png",
+        img: "certifications/ibm-ce.png",
     },
     {
         id: 5,
         title: "Microsoft Applied Skill 4",
         issuer: "Microsoft",
         url: "https://learn.microsoft.com/api/credentials/share/en-us/GauravSingh-7912/BD7F66CE8303A831?sharingId=258B974C6AF453FD",
-        img: "certifications/AS-CSMT.png",
+        img: "certifications/as-csmt.png",
     },
 ];
 
